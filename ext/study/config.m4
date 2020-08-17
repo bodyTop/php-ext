@@ -5,10 +5,10 @@ dnl Remove where necessary.
 
 dnl If your extension references something external, use 'with':
 
-dnl PHP_ARG_WITH([study],
-dnl   [for study support],
-dnl   [AS_HELP_STRING([--with-study],
-dnl     [Include study support])])
+ PHP_ARG_WITH([study],
+   [for study support],
+   [AS_HELP_STRING([--with-study],
+     [Include study support])])
 
 dnl Otherwise use 'enable':
 
@@ -91,4 +91,11 @@ if test "$PHP_STUDY" != "no"; then
   AC_DEFINE(HAVE_STUDY, 1, [ Have study support ])
 
   PHP_NEW_EXTENSION(study, study.c, $ext_shared)
+fi
+
+if test -z "$PHP_DEBUG"; then
+    AC_ARG_ENABLE(debug,
+        [--enable-debug  compile with debugging system],
+        [PHP_DEBUG=$enableval], [PHP_DEBUG=no]
+    )
 fi
