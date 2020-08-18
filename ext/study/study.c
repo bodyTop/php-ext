@@ -16,10 +16,9 @@
 #endif
 
 //========================函数声明及实现===============================
-
-/* {{{ void study_test1()
+/* {{{ void study_test()
  */
-PHP_FUNCTION(study_test1)
+PHP_FUNCTION(study_test)
 {
     ZEND_PARSE_PARAMETERS_NONE();
     php_printf("The extension %s is loaded and working!\r\n", "study");
@@ -51,7 +50,7 @@ PHP_FUNCTION(test)
 
 /* {{{ arginfo
  */
-ZEND_BEGIN_ARG_INFO(arginfo_study_test1, 0)
+ZEND_BEGIN_ARG_INFO(arginfo_study_test, 0)
 ZEND_END_ARG_INFO()
 
 ZEND_BEGIN_ARG_INFO(arginfo_test, 0)
@@ -67,7 +66,7 @@ ZEND_END_ARG_INFO()
  */
 static const zend_function_entry study_functions[] = {
     PHP_FE(test,arginfo_test)
-    PHP_FE(study_test1,		arginfo_study_test1)
+    PHP_FE(study_test,arginfo_study_test)
 	PHP_FE_END
 };
 /* }}} */
